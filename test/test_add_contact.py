@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
-from selenium.webdriver.firefox.webdriver import WebDriver
 import unittest
-from group import contact
+
+from selenium.webdriver.firefox.webdriver import WebDriver
+
+from model.group import contact
+
 
 def is_alert_present(wd):
     try:
