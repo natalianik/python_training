@@ -5,16 +5,9 @@ class ContactHelper:
     def __init__(self, app):
         self.app = app
 
-    def return_to_groups_page(self):
-        # return to groups page
-        wd = self.app.wd
-        wd.find_element_by_link_text("group page").click()
-
     def create(self, contact):
         wd = self.app.wd
         self.open_contacts()
-        # create new group
-        #wd.find_element_by_name("new").click()
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
         wd.find_element_by_name("firstname").send_keys(contact.firstname)
@@ -76,5 +69,4 @@ class ContactHelper:
 
     def open_contacts(self):
         wd = self.app.wd
-        # open contacts page
         wd.find_element_by_link_text("add new").click()

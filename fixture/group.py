@@ -31,5 +31,4 @@ class GroupHelper:
 
     def open_groups(self):
         wd = self.app.wd
-        # open groups page
         wd.find_element_by_link_text("groups").click()
