@@ -1,7 +1,5 @@
 __author__ = 'Natalia.Nikonova'
-
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import Select
+# -*- coding: utf-8 -*-
 
 class ContactHelper:
 
@@ -76,20 +74,15 @@ class ContactHelper:
         # select first group
         wd.find_element_by_name("selected[]").click()
         # submit deletion
-        #wd.find_elements_by_xpath("//form[@name='MainForm']//div[@class='left']/input[@type='button'][@onclick='DeleteSel()'][@value='Delete']").click()
-        #wd.find_elements_by_xpath("//div[@id='content']/form[2]/div[2]").click()
-        #wd.find_elements_by_css_selector("input[type='button'][value='Delete']").click()
-        wd.find_elements_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
-        #DeleteSel()
-        #wd.find_element_by_css_selector('//button[value='Delete']").click()
-        #wd.find_element(By.XPATH, '//button[class()="left", value()="Delete"]')
-        #wd.find_element_by_link_text("Delete").click()
-        #self.return_to_groups_page()
+        wd.find_element_by_css_selector("input[type='button'][value='Delete']").click()
+        #wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
         wd.switch_to_alert().accept()
+        wd.find_element_by_link_text("home").click()
 
-    def edit(self, contact):
+    def edit_first(self, contact):
         wd = self.app.wd
         self.open_contacts()
+        wd.find_element_by_css_selector("img[alt=\"Edit\"]").click()
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
         wd.find_element_by_name("firstname").send_keys(contact.firstname)
@@ -147,7 +140,9 @@ class ContactHelper:
         wd.find_element_by_name("notes").click()
         wd.find_element_by_name("notes").clear()
         wd.find_element_by_name("notes").send_keys(contact.notes)
-        wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
+        #wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
+        wd.find_element_by_xpath("//div[@id='content']/form[1]/input[22]").click()
+        wd.find_element_by_link_text("home").click()
 
     def open_contacts(self):
         wd = self.app.wd

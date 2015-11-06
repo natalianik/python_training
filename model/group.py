@@ -1,4 +1,5 @@
 __author__ = 'Natalia.Nikonova'
+# -*- coding: utf-8 -*-
 
 class group:
 

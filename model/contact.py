@@ -1,4 +1,5 @@
 __author__ = 'Natalia.Nikonova'
+# -*- coding: utf-8 -*-
 
 class contact:
     def __init__(self, firstname, middlename, lastname, nickname, title,

@@ -1,5 +1,5 @@
 __author__ = 'Natalia.Nikonova'
-
+# -*- coding: utf-8 -*-
 class SessionHelper:
 
     def __init__(self, app):
