@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
-import pytest
 from model.contact import contact
-from fixture.application import Application
 
 def test_test_add_contact(app):
     app.contact.create_new(contact(firstname="Natalia", middlename="V.", lastname="Nikonova",
